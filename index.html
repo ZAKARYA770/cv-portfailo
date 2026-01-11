@@ -26,6 +26,7 @@
             font-family: 'Space Grotesk', sans-serif;
         }
 
+        /* Arrière-plan animé */
         .blob {
             position: fixed;
             width: 500px;
@@ -42,6 +43,7 @@
             to { transform: translate(20%, 20%); }
         }
 
+        /* Glassmorphism Cards */
         .glass {
             background: rgba(30, 41, 59, 0.7);
             backdrop-filter: blur(12px);
@@ -55,6 +57,7 @@
             transform: translateY(-10px);
         }
 
+        /* Halo autour de la photo */
         .photo-wrapper {
             position: relative;
             padding: 10px;
@@ -90,10 +93,21 @@
             transition: all 0.3s ease;
         }
 
+        .btn-creative:hover {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+            transform: scale(1.05);
+        }
+
         .skill-tag {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
             transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
         }
     </style>
 </head>
@@ -112,18 +126,18 @@
                 Zakarya El Kachach
             </h1>
             <p class="text-xl text-indigo-200 font-light tracking-widest uppercase mb-8">
-                [cite_start]Marketing Digital & Data Analyst Student [cite: 7]
+                Marketing Digital & Data Analyst Student
             </p>
 
             <div class="flex flex-wrap justify-center gap-4">
                 <a href="mailto:mrzakaryaelkachach@gmail.com" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
-                    [cite_start]<i class="far fa-envelope text-indigo-400"></i> mrzakaryaelkachach@gmail.com [cite: 4]
+                    <i class="far fa-envelope text-indigo-400"></i> mrzakaryaelkachach@gmail.com
                 </a>
                 <a href="https://www.kaggle.com/code/zakaryaaelkachach/analyse-exploratoire-de-mes-premi-res-donn-es" target="_blank" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
                     <i class="fab fa-kaggle text-indigo-400"></i> Kaggle Portfolio
                 </a>
                 <a href="tel:+212708235021" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
-                    [cite_start]<i class="fas fa-phone-alt text-indigo-400"></i> +212 708 235 021 [cite: 3]
+                    <i class="fas fa-phone-alt text-indigo-400"></i> +212 708 235 021
                 </a>
             </div>
 
@@ -135,18 +149,19 @@
         </header>
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            
             <div class="md:col-span-4 space-y-8">
                 <div class="glass p-8 rounded-3xl">
                     <h2 class="heading-font text-2xl font-bold mb-6 flex items-center gap-3">
                         <span class="w-2 h-8 bg-indigo-500 rounded-full"></span> Compétences
                     </h2>
                     <div class="flex flex-wrap gap-3">
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Digital [cite: 20]</span>
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Canva Expert [cite: 19]</span>
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Commercial [cite: 14]</span>
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Time Management [cite: 16]</span>
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Communication [cite: 17]</span>
-                        [cite_start]<span class="skill-tag px-4 py-2 rounded-xl text-sm">Microsoft Office [cite: 18]</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Digital</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Canva Expert</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Commercial</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Time Management</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Data Analysis</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Microsoft Office</span>
                     </div>
                 </div>
 
@@ -156,19 +171,19 @@
                     </h2>
                     <div class="space-y-4">
                         <div>
-                            [cite_start]<div class="flex justify-between text-sm mb-1"><span>Arabe</span><span>Maternelle [cite: 24]</span></div>
+                            <div class="flex justify-between text-sm mb-1"><span>Arabe</span><span>Maternelle</span></div>
                             <div class="h-2 bg-white/5 rounded-full overflow-hidden">
                                 <div class="h-full bg-indigo-500" style="width: 100%"></div>
                             </div>
                         </div>
                         <div>
-                            [cite_start]<div class="flex justify-between text-sm mb-1"><span>Français</span><span>Bon niveau [cite: 23]</span></div>
+                            <div class="flex justify-between text-sm mb-1"><span>Français</span><span>Bon niveau</span></div>
                             <div class="h-2 bg-white/5 rounded-full overflow-hidden">
                                 <div class="h-full bg-purple-500" style="width: 85%"></div>
                             </div>
                         </div>
                         <div>
-                            [cite_start]<div class="flex justify-between text-sm mb-1"><span>Anglais</span><span>Bon niveau [cite: 22]</span></div>
+                            <div class="flex justify-between text-sm mb-1"><span>Anglais</span><span>Bon niveau</span></div>
                             <div class="h-2 bg-white/5 rounded-full overflow-hidden">
                                 <div class="h-full bg-pink-500" style="width: 80%"></div>
                             </div>
@@ -184,20 +199,21 @@
                     </div>
                     <h2 class="heading-font text-3xl font-bold mb-6">Profil</h2>
                     <p class="text-gray-300 text-lg leading-relaxed">
-                        [cite_start]Étudiant en 2ème année de <span class="text-indigo-400 font-bold">Marketing Digital et Commercial</span> à l'EST de Salé[cite: 7]. [cite_start]Motivé et dynamique, j'allie création de contenu et analyse pour transformer des insights en campagnes percutantes[cite: 9, 31].
+                        Étudiant en 2ème année de <span class="text-indigo-400 font-bold">Marketing Digital et Commercial</span> à l'EST de Salé[cite: 7]. Motivé et dynamique, j'allie création de contenu et analyse pour transformer des insights en campagnes percutantes[cite: 9]. Je suis à la recherche d'un stage pour mettre mon expertise au service de votre agence.
                     </p>
                 </div>
 
                 <div class="glass p-10 rounded-3xl">
                     <h2 class="heading-font text-3xl font-bold mb-10">Parcours & Expérience</h2>
+                    
                     <div class="space-y-12 relative border-l-2 border-white/10 ml-4">
                         <div class="relative pl-10">
                             <div class="absolute -left-[33px] top-0 w-16 h-16 glass rounded-2xl flex items-center justify-center text-indigo-400">
                                 <i class="fas fa-university text-xl"></i>
                             </div>
-                            <span class="text-indigo-400 text-sm font-bold tracking-widest">2024 — 2026</span>
-                            [cite_start]<h3 class="text-xl font-bold mt-1">DUT Marketing Digital & Commercial [cite: 33, 34]</h3>
-                            [cite_start]<p class="text-gray-400">EST de Salé (En cours) [cite: 35]</p>
+                            <span class="text-indigo-400 text-sm font-bold tracking-widest">2024 — PRÉSENT</span>
+                            <h3 class="text-xl font-bold mt-1">DUT Marketing Digital & Commercial</h3>
+                            <p class="text-gray-400">École Supérieure de Technologie de Salé (EST) [cite: 34, 35]</p>
                         </div>
 
                         <div class="relative pl-10">
@@ -205,8 +221,8 @@
                                 <i class="fas fa-briefcase text-xl"></i>
                             </div>
                             <span class="text-purple-400 text-sm font-bold tracking-widest">2024 — 2025</span>
-                            <h3 class="text-xl font-bold mt-1">Stagiaire | [cite_start]ATACADAO [cite: 11, 12]</h3>
-                            [cite_start]<p class="text-gray-400 italic">Stage d'initiation - Gestion administrative & RH [cite: 29, 30]</p>
+                            <h3 class="text-xl font-bold mt-1">Stagiaire | ATACADAO</h3>
+                            <p class="text-gray-400 italic">Stage d'initiation - Gestion administrative & RH [cite: 11, 29]</p>
                         </div>
 
                         <div class="relative pl-10">
@@ -214,20 +230,20 @@
                                 <i class="fas fa-award text-xl"></i>
                             </div>
                             <span class="text-pink-400 text-sm font-bold tracking-widest">2023 — 2024</span>
-                            [cite_start]<h3 class="text-xl font-bold mt-1">Baccalauréat Sciences Économiques [cite: 36, 37]</h3>
-                            [cite_start]<p class="text-gray-400">Lycée Dakhla - Ouled Berhil [cite: 38]</p>
+                            <h3 class="text-xl font-bold mt-1">Baccalauréat Sciences Économiques</h3>
+                            <p class="text-gray-400">Lycée Dakhla - Ouled Berhil (Mention Bien) [cite: 37, 38]</p>
                         </div>
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="glass p-8 rounded-3xl">
+                    <div class="glass p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-transparent">
                         <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-brain text-pink-500"></i> Soft Skills</h4>
-                        [cite_start]<p class="text-sm text-gray-400">Leadership, Travail d'équipe et Créativité[cite: 26, 27, 28].</p>
+                        <p class="text-sm text-gray-400">Leadership, Travail d'équipe, Créativité et Communication[cite: 26, 27, 28].</p>
                     </div>
-                    <div class="glass p-8 rounded-3xl">
+                    <div class="glass p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 to-transparent">
                         <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-500"></i> Localisation</h4>
-                        [cite_start]<p class="text-sm text-gray-400">Salé, Avenue Al Qods[cite: 5]. Disponible pour stage.</p>
+                        <p class="text-sm text-gray-400">Basé à Salé/Rabat. Disponible pour un stage en Agence Marketing[cite: 5].</p>
                     </div>
                 </div>
             </div>
@@ -237,5 +253,6 @@
             <p class="text-gray-500 text-sm tracking-widest uppercase">&copy; 2026 Designed for Excellence • Zakarya El Kachach</p>
         </footer>
     </div>
+
 </body>
 </html>
