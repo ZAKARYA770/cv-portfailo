@@ -3,111 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Zakarya El Kachach</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Zakarya El Kachach | Digital Marketer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --accent: #ec4899;
+            --bg: #0f172a;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg);
+            color: #f1f5f9;
+            overflow-x: hidden;
+        }
+
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Arrière-plan animé */
+        .blob {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(60px);
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(-10%, -10%); }
+            to { transform: translate(20%, 20%); }
+        }
+
+        /* Glassmorphism Cards */
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass:hover {
+            border: 1px solid rgba(99, 102, 241, 0.5);
+            transform: translateY(-10px);
+        }
+
+        /* Halo autour de la photo */
+        .photo-wrapper {
+            position: relative;
+            padding: 10px;
+        }
+
+        .photo-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+            border-radius: 50%;
+            animation: rotate 4s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .photo-circle {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--bg);
+        }
+
+        .btn-creative {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-creative:hover {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+            transform: scale(1.05);
+        }
+
+        .skill-tag {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-tag:hover {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <header>
-            <div class="header-content">
-                <div class="profile-photo-placeholder">
-                    <i class="fa-solid fa-user-circle"></i>
-                </div>
-                <div>
-                    <h1>Zakarya El Kachach</h1>
-                    <p class="subtitle">Étudiant en Marketing Digital et Commercial</p>
-                </div>
+<body class="p-4 md:p-8">
+
+    <div class="blob"></div>
+    <div class="blob" style="right: 0; top: 20%; animation-delay: -5s; background: radial-gradient(circle, rgba(236, 72, 153, 0.1) 0%, rgba(0,0,0,0) 70%);"></div>
+
+    <div class="max-w-6xl mx-auto">
+        <header class="flex flex-col items-center text-center mb-16">
+            <div class="photo-wrapper mb-8">
+                <img src="profile.jpg" alt="Zakarya El Kachach" class="photo-circle" onerror="this.src='https://ui-avatars.com/api/?name=Zakarya+El+Kachach&background=6366f1&color=fff&size=200'">
             </div>
-            <p class="objective">
-                Je suis à la recherche d'un stage stimulant au sein d'une agence marketing à Rabat, afin d'appliquer et de développer mes compétences en stratégie digitale, création de contenu et analyse de données.
+            
+            <h1 class="heading-font text-5xl md:text-7xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+                Zakarya El Kachach
+            </h1>
+            <p class="text-xl text-indigo-200 font-light tracking-widest uppercase mb-8">
+                Marketing Digital & Data Analyst Student
             </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:mrzakaryaelkachach@gmail.com" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
+                    <i class="far fa-envelope text-indigo-400"></i> mrzakaryaelkachach@gmail.com
+                </a>
+                <a href="https://www.kaggle.com/code/zakaryaaelkachach/analyse-exploratoire-de-mes-premi-res-donn-es" target="_blank" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
+                    <i class="fab fa-kaggle text-indigo-400"></i> Kaggle Portfolio
+                </a>
+                <a href="tel:+212708235021" class="glass px-6 py-3 rounded-full flex items-center gap-2 hover:bg-white/10">
+                    <i class="fas fa-phone-alt text-indigo-400"></i> +212 708 235 021
+                </a>
+            </div>
+
+            <div class="mt-12">
+                <a href="cv.pdf" download class="btn-creative px-10 py-5 rounded-2xl font-bold text-lg flex items-center gap-3 shadow-2xl">
+                    <i class="fas fa-cloud-download-alt"></i> TÉLÉCHARGER LE CV (LATEX)
+                </a>
+            </div>
         </header>
 
-        <section class="about">
-            <h2>À Propos</h2>
-            <p>
-                Étudiant en deuxième année de Marketing Digital et Commercial à l'École Supérieure de Technologie de Salé, motivé et dynamique. J'ai acquis une première expérience au sein d'Attaqadao dans les domaines des ressources humaines et de la gestion. À l'aise avec les outils digitaux, je m'intéresse particulièrement à la création de contenu, aux réseaux sociaux et au marketing digital.
-            </p>
-        </section>
-
-        <section class="experience">
-            <h2>Expérience</h2>
-            <div class="item">
-                <h3>Stagiaire - Atacadao</h3>
-                <p class="period">Maroc | 2024-2025</p>
-                <ul>
-                    <li>Participation aux activités liées à la gestion administrative et aux ressources humaines.</li>
-                    <li>Contribution au fonctionnement du service RH, au classement et au suivi des documents, ainsi qu'à l'organisation des tâches quotidiennes.</li>
-                    <li>Développement du sens de l'organisation, de l'esprit d'équipe et de la compréhension du milieu professionnel.</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="education">
-            <h2>Éducation</h2>
-            <div class="item">
-                <h3>Diplôme Universitaire de Technologie (DUT) - Marketing Digital et Commercial (En cours)</h3>
-                <p class="period">École Supérieure de Technologie de Salé (EST) | Salé | 2024-2026</p>
-            </div>
-            <div class="item">
-                <h3>Baccalauréat - Sciences Économiques (Mention Bien)</h3>
-                <p class="period">Lycée Dakhla - Ouled Berhil | Maroc | 2023-2024</p>
-            </div>
-        </section>
-
-        <section class="skills">
-            <h2>Compétences</h2>
-            <div class="skills-grid">
-                <div>
-                    <h3>Marketing</h3>
-                    <ul>
-                        <li>Marketing Commercial</li>
-                        <li>Digital Marketing</li>
-                        <li>Création de contenu digital</li>
-                    </ul>
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            
+            <div class="md:col-span-4 space-y-8">
+                <div class="glass p-8 rounded-3xl">
+                    <h2 class="heading-font text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-indigo-500 rounded-full"></span> Compétences
+                    </h2>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Digital</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Canva Expert</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Marketing Commercial</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Time Management</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Data Analysis</span>
+                        <span class="skill-tag px-4 py-2 rounded-xl text-sm">Microsoft Office</span>
+                    </div>
                 </div>
-                <div>
-                    <h3>Logiciels</h3>
-                    <ul>
-                        <li>Microsoft Word, Excel, PowerPoint</li>
-                        <li>Canva</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Soft Skills</h3>
-                    <ul>
-                        <li>Leadership et communication</li>
-                        <li>Travail en équipe</li>
-                        <li>Créativité</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3>Langues</h3>
-                    <ul>
-                        <li>Arabe (Langue maternelle)</li>
-                        <li>Français (Bon niveau)</li>
-                        <li>Anglais (Bon niveau)</li>
-                    </ul>
+
+                <div class="glass p-8 rounded-3xl">
+                    <h2 class="heading-font text-2xl font-bold mb-6 flex items-center gap-3">
+                        <span class="w-2 h-8 bg-purple-500 rounded-full"></span> Langues
+                    </h2>
+                    <div class="space-y-4">
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Arabe</span><span>Maternelle</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-indigo-500" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Français</span><span>Bon niveau</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-purple-500" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-1"><span>Anglais</span><span>Bon niveau</span></div>
+                            <div class="h-2 bg-white/5 rounded-full overflow-hidden">
+                                <div class="h-full bg-pink-500" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
 
-        <section class="links">
-            <h2>Liens Utiles</h2>
-            <ul>
-                <li><a href="ton_cv.pdf" download="Zakarya_El_Kachach_CV.pdf"><i class="fa-solid fa-file-pdf"></i> Télécharger mon CV (PDF)</a></li>
-                <li><a href="https://www.kaggle.com/code/zakaryaelkachach/notebook64e15c99cf/edit" target="_blank"><i class="fa-brands fa-kaggle"></i> Mon Profil Kaggle</a></li>
-            </ul>
-        </section>
+            <div class="md:col-span-8 space-y-8">
+                <div class="glass p-10 rounded-3xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10">
+                        <i class="fas fa-quote-right text-6xl"></i>
+                    </div>
+                    <h2 class="heading-font text-3xl font-bold mb-6">Profil</h2>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Étudiant en 2ème année de <span class="text-indigo-400 font-bold">Marketing Digital et Commercial</span> à l'EST de Salé[cite: 7]. Motivé et dynamique, j'allie création de contenu et analyse pour transformer des insights en campagnes percutantes[cite: 9]. Je suis à la recherche d'un stage pour mettre mon expertise au service de votre agence.
+                    </p>
+                </div>
 
-        <footer>
-            <p>Contact: +212-708235021 | mrzakaryaelkachach@gmail.com</p>
-            <p>Consultez mon profil professionnel et mes travaux sur Kaggle : 
-   <a href="https://www.kaggle.com/code/zakaryaaelkachach/analyse-exploratoire-de-mes-premi-res-donn-es" target="_blank">Mon Profil Kaggle</a>
-</p>
+                <div class="glass p-10 rounded-3xl">
+                    <h2 class="heading-font text-3xl font-bold mb-10">Parcours & Expérience</h2>
+                    
+                    <div class="space-y-12 relative border-l-2 border-white/10 ml-4">
+                        <div class="relative pl-10">
+                            <div class="absolute -left-[33px] top-0 w-16 h-16 glass rounded-2xl flex items-center justify-center text-indigo-400">
+                                <i class="fas fa-university text-xl"></i>
+                            </div>
+                            <span class="text-indigo-400 text-sm font-bold tracking-widest">2024 — PRÉSENT</span>
+                            <h3 class="text-xl font-bold mt-1">DUT Marketing Digital & Commercial</h3>
+                            <p class="text-gray-400">École Supérieure de Technologie de Salé (EST) [cite: 34, 35]</p>
+                        </div>
+
+                        <div class="relative pl-10">
+                            <div class="absolute -left-[33px] top-0 w-16 h-16 glass rounded-2xl flex items-center justify-center text-purple-400">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </div>
+                            <span class="text-purple-400 text-sm font-bold tracking-widest">2024 — 2025</span>
+                            <h3 class="text-xl font-bold mt-1">Stagiaire | ATACADAO</h3>
+                            <p class="text-gray-400 italic">Stage d'initiation - Gestion administrative & RH [cite: 11, 29]</p>
+                        </div>
+
+                        <div class="relative pl-10">
+                            <div class="absolute -left-[33px] top-0 w-16 h-16 glass rounded-2xl flex items-center justify-center text-pink-400">
+                                <i class="fas fa-award text-xl"></i>
+                            </div>
+                            <span class="text-pink-400 text-sm font-bold tracking-widest">2023 — 2024</span>
+                            <h3 class="text-xl font-bold mt-1">Baccalauréat Sciences Économiques</h3>
+                            <p class="text-gray-400">Lycée Dakhla - Ouled Berhil (Mention Bien) [cite: 37, 38]</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass p-8 rounded-3xl bg-gradient-to-br from-indigo-500/10 to-transparent">
+                        <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-brain text-pink-500"></i> Soft Skills</h4>
+                        <p class="text-sm text-gray-400">Leadership, Travail d'équipe, Créativité et Communication[cite: 26, 27, 28].</p>
+                    </div>
+                    <div class="glass p-8 rounded-3xl bg-gradient-to-br from-purple-500/10 to-transparent">
+                        <h4 class="font-bold mb-2 flex items-center gap-2"><i class="fas fa-map-marker-alt text-indigo-500"></i> Localisation</h4>
+                        <p class="text-sm text-gray-400">Basé à Salé/Rabat. Disponible pour un stage en Agence Marketing[cite: 5].</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-20 py-10 border-t border-white/5 text-center">
+            <p class="text-gray-500 text-sm tracking-widest uppercase">&copy; 2026 Designed for Excellence • Zakarya El Kachach</p>
         </footer>
     </div>
+
 </body>
 </html>
