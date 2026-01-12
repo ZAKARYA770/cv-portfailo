@@ -5,57 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zakarya El Kachach | Digital Strategist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0a0a0a;
-            --gold: #d4af37;
-            --emerald: #064e3b;
-            --card-dark: #121212;
+            --bg: #050505;
+            --primary: #6366f1;
+            --secondary: #a855f7;
+            --accent: #d4af37;
         }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg);
-            color: #e5e5e5;
+            color: #f8fafc;
         }
 
         .font-syne { font-family: 'Syne', sans-serif; }
 
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar { width: 4px; }
         ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(var(--primary), var(--secondary)); border-radius: 10px; }
 
-        /* Left side fixed only on Desktop */
         @media (min-width: 1024px) {
-            .fixed-side { position: fixed; top: 0; left: 0; height: 100vh; width: 40%; overflow: hidden; }
-            .scroll-side { margin-left: 40%; width: 60%; }
+            .fixed-side { position: fixed; top: 0; left: 0; height: 100vh; width: 35%; }
+            .scroll-side { margin-left: 35%; width: 65%; }
         }
 
-        /* Creative Hover Effects */
         .glass-card {
-            background: rgba(20, 20, 20, 0.6);
+            background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
         }
 
         .glass-card:hover {
-            border-color: var(--gold);
-            transform: translateX(10px);
-            background: rgba(30, 30, 30, 0.8);
+            border-color: var(--primary);
+            transform: translateY(-5px);
         }
 
-        .gold-glow { text-shadow: 0 0 20px rgba(212, 175, 55, 0.3); }
-
-        /* Floating elements background */
-        .floating-bg {
+        .glow {
             position: absolute;
             width: 300px; height: 300px;
-            background: radial-gradient(circle, var(--emerald) 0%, transparent 70%);
-            filter: blur(80px);
-            opacity: 0.2;
+            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+            filter: blur(100px);
+            opacity: 0.15;
             z-index: -1;
         }
     </style>
@@ -64,39 +58,41 @@
 
     <div class="flex flex-col lg:flex-row">
         
-        <aside class="fixed-side bg-[#0d0d0d] p-8 md:p-16 flex flex-col justify-between border-b lg:border-r lg:border-b-0 border-white/5">
-            <div class="floating-bg" style="top: -10%; left: -10%;"></div>
+        <aside class="fixed-side bg-[#080808] p-10 md:p-16 flex flex-col justify-between border-b lg:border-r border-white/5">
+            <div class="glow" style="top: -10%; left: -10%;"></div>
             
-            <div class="space-y-8">
-                <div class="relative w-32 h-32 md:w-40 md:h-40 group">
+            <div class="space-y-10 text-center lg:text-left">
+                <div class="relative inline-block group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-40 group-hover:opacity-100 transition duration-500"></div>
                     <img src="images/profil.jpg" alt="Zakarya" 
-                         class="w-full h-full object-cover rounded-2xl border-2 border-white/10 grayscale group-hover:grayscale-0 transition-all duration-700"
-                         onerror="this.src='https://ui-avatars.com/api/?name=Zakarya+El+Kachach&background=d4af37&color=000&size=200'">
-                    <div class="absolute inset-0 border-2 border-gold m-2 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 scale-110 group-hover:scale-100"></div>
+                         class="relative w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-[#080808]"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Zakarya+El+Kachach&background=6366f1&color=fff&size=200'">
                 </div>
 
                 <div class="space-y-4">
-                    <h1 class="font-syne text-5xl md:text-6xl font-extrabold leading-none text-white tracking-tighter">
-                        ZAKARYA <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-200">EL KACHACH</span>
+                    <h1 class="font-syne text-4xl md:text-5xl font-extrabold leading-none tracking-tighter">
+                        ZAKARYA <br> 
+                        <span class="bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-yellow-200">
+                            EL KACHACH
+                        </span>
                     </h1>
-                    <div class="h-1 w-20 bg-gold"></div>
-                    <p class="text-xl font-syne font-bold uppercase tracking-[0.2em] text-gray-500">
+                    <p class="text-xs font-bold uppercase tracking-[0.3em] text-indigo-400">
                         Marketing Digital & Commercial
                     </p>
                 </div>
             </div>
 
-            <div class="space-y-6 pt-10">
-                <div class="flex flex-col gap-2">
-                    <a href="mailto:mrzakaryaelkachach@gmail.com" class="text-sm hover:text-gold transition-colors flex items-center gap-3">
-                        <i class="far fa-envelope text-gold"></i> mrzakaryaelkachach@gmail.com
+            <div class="mt-10 space-y-6">
+                <div class="flex flex-col gap-3 items-center lg:items-start">
+                    <a href="mailto:mrzakaryaelkachach@gmail.com" class="text-xs hover:text-indigo-400 transition-colors flex items-center gap-3">
+                        <i class="far fa-envelope text-indigo-500"></i> mrzakaryaelkachach@gmail.com
                     </a>
-                    <a href="tel:+212708235021" class="text-sm hover:text-gold transition-colors flex items-center gap-3">
-                        <i class="fas fa-phone-alt text-gold"></i> +212 708 235 021
+                    <a href="tel:+212708235021" class="text-xs hover:text-indigo-400 transition-colors flex items-center gap-3">
+                        <i class="fas fa-phone-alt text-indigo-500"></i> +212 708 235 021
                     </a>
                 </div>
-                <div class="flex gap-4">
-                    <a href="https://www.kaggle.com/zakaryaaelkachach" target="_blank" class="w-10 h-10 border border-white/10 rounded-full flex items-center justify-center hover:bg-gold hover:text-black transition-all">
+                <div class="flex justify-center lg:justify-start gap-4">
+                    <a href="https://www.kaggle.com/zakaryaaelkachach" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-indigo-600 transition-all">
                         <i class="fab fa-kaggle"></i>
                     </a>
                 </div>
@@ -105,81 +101,81 @@
 
         <main class="scroll-side p-8 md:p-16 lg:p-24 space-y-24">
             
-            <section class="max-w-2xl">
-                <span class="text-gold font-syne font-bold uppercase tracking-widest text-xs">Introduction</span>
-                <h2 class="font-syne text-4xl font-bold text-white mt-4 mb-8">Transformer la donnée en <span class="italic">stratégie.</span></h2>
-                <p class="text-gray-400 text-lg leading-relaxed">
-                    Étudiant en 2ème année à l'EST de Salé. Je ne crée pas seulement du contenu, je conçois des solutions digitales basées sur l'analyse de données pour maximiser l'impact commercial. 
-                    <span class="text-white">Maîtrise de l'écosystème digital et passion pour le marketing analytique.</span>
+            <section class="relative">
+                <div class="glow" style="right: 0; bottom: 0;"></div>
+                <h2 class="font-syne text-5xl md:text-7xl font-bold text-white mb-8 italic tracking-tighter">Profil</h2>
+                <p class="text-gray-400 text-lg leading-relaxed max-w-2xl">
+                    Étudiant en 2ème année à l'EST de Salé. Passionné par l'alliance du <span class="text-white font-semibold">Marketing Digital et Commercial</span>. 
+                    Mon approche repose sur l'utilisation des données (Data Analysis) pour concevoir des stratégies marketing innovantes et performantes. 
+                    Prêt à apporter ma créativité et ma rigueur à votre équipe.
                 </p>
             </section>
 
             <section class="space-y-10">
                 <div class="flex items-center gap-4">
-                    <h3 class="font-syne text-2xl font-bold text-white uppercase tracking-tighter">Expertise</h3>
-                    <div class="h-px flex-1 bg-white/10"></div>
+                    <h3 class="font-syne text-xl font-bold text-white uppercase tracking-widest">Expertise</h3>
+                    <div class="h-px flex-1 bg-white/5"></div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-gold mb-2">Marketing Digital</h4>
-                        <p class="text-sm text-gray-500">Gestion des réseaux sociaux et création de campagnes percutantes.</p>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-indigo-500">
+                        <h4 class="font-bold text-white mb-2">Marketing Digital</h4>
+                        <p class="text-sm text-gray-500">Content strategy & Community management.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-gold mb-2">Data Analysis</h4>
-                        <p class="text-sm text-gray-500">Exploitation des données pour orienter les décisions commerciales.</p>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-purple-500">
+                        <h4 class="font-bold text-white mb-2">Data Analysis</h4>
+                        <p class="text-sm text-gray-500">Analyse exploratoire et insights clients.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-gold mb-2">Canva Expert</h4>
-                        <p class="text-sm text-gray-500">Design graphique rapide et professionnel pour tous supports.</p>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-yellow-500">
+                        <h4 class="font-bold text-white mb-2">Canva Expert</h4>
+                        <p class="text-sm text-gray-500">Design visuel pour réseaux sociaux.</p>
                     </div>
-                    <div class="glass-card p-6 rounded-xl">
-                        <h4 class="font-bold text-gold mb-2">Microsoft Office</h4>
-                        <p class="text-sm text-gray-500">Maîtrise avancée d'Excel et PowerPoint pour rapports et présentations.</p>
+                    <div class="glass-card p-6 rounded-2xl border-l-4 border-l-indigo-500">
+                        <h4 class="font-bold text-white mb-2">Office 365</h4>
+                        <p class="text-sm text-gray-500">Maîtrise Excel et outils de productivité.</p>
                     </div>
                 </div>
             </section>
 
             <section class="space-y-10">
                 <div class="flex items-center gap-4">
-                    <h3 class="font-syne text-2xl font-bold text-white uppercase tracking-tighter">Parcours</h3>
-                    <div class="h-px flex-1 bg-white/10"></div>
+                    <h3 class="font-syne text-xl font-bold text-white uppercase tracking-widest">Parcours</h3>
+                    <div class="h-px flex-1 bg-white/5"></div>
                 </div>
-                <div class="space-y-12">
-                    <div class="relative pl-8 border-l border-gold/30">
-                        <div class="absolute -left-1.5 top-0 w-3 h-3 bg-gold rounded-full"></div>
-                        <span class="text-xs text-gold font-bold">2024 — 2026</span>
-                        <h4 class="text-xl font-bold text-white mt-1">DUT Marketing Digital & Commercial</h4>
-                        <p class="text-gray-500">École Supérieure de Technologie de Salé (EST)</p>
+                <div class="space-y-10">
+                    <div class="flex gap-6">
+                        <div class="text-indigo-500 font-bold">2024<br>2026</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">DUT Marketing Digital</h4>
+                            <p class="text-gray-500 text-sm">EST Salé — Université Mohammed V</p>
+                        </div>
                     </div>
-                    <div class="relative pl-8 border-l border-white/10">
-                        <div class="absolute -left-1.5 top-0 w-3 h-3 bg-white/10 rounded-full"></div>
-                        <span class="text-xs text-gray-500 font-bold">2024 — 2025</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Stagiaire Administratif & RH</h4>
-                        <p class="text-gray-500 italic">ATACADAO - Stage d'initiation</p>
+                    <div class="flex gap-6">
+                        <div class="text-purple-500 font-bold">2024<br>2025</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Stage ATACADAO</h4>
+                            <p class="text-gray-500 text-sm italic">Gestion Administrative & RH</p>
+                        </div>
                     </div>
-                    <div class="relative pl-8 border-l border-white/10">
-                        <div class="absolute -left-1.5 top-0 w-3 h-3 bg-white/10 rounded-full"></div>
-                        <span class="text-xs text-gray-500 font-bold">2023 — 2024</span>
-                        <h4 class="text-xl font-bold text-white mt-1">Baccalauréat Sciences Économiques</h4>
-                        <p class="text-gray-500 uppercase text-xs">Lycée Dakhla (Mention Bien)</p>
+                    <div class="flex gap-6">
+                        <div class="text-yellow-500 font-bold">2023<br>2024</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white">Baccalauréat Éco</h4>
+                            <p class="text-gray-500 text-sm">Lycée Dakhla — Mention Bien</p>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <section class="bg-gradient-to-br from-emerald to-bg p-8 md:p-12 rounded-[2rem] border border-white/5 relative overflow-hidden group">
-                <div class="relative z-10 space-y-6">
-                    <h2 class="font-syne text-3xl font-bold text-white leading-tight">Prêt à collaborer sur <br>votre prochain projet ?</h2>
-                    <a href="CV_zakarya_el_kachach_.pdf" download class="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gold transition-all duration-300">
-                        TÉLÉCHARGER MON CV <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
-                <i class="fas fa-briefcase absolute bottom-[-20px] right-[-20px] text-white/5 text-9xl rotate-[-20deg]"></i>
+            <section class="p-8 md:p-12 rounded-[2.5rem] bg-gradient-to-br from-indigo-900/40 to-black border border-indigo-500/20 text-center space-y-8">
+                <h2 class="font-syne text-3xl font-bold text-white text-gradient">Besoin d'un stagiaire dynamique ?</h2>
+                <a href="CV_zakarya_el_kachach_.pdf" download class="inline-flex items-center gap-3 bg-indigo-600 text-white px-10 py-5 rounded-full font-extrabold hover:bg-white hover:text-black transition-all">
+                    TÉLÉCHARGER LE CV <i class="fas fa-file-download"></i>
+                </a>
             </section>
 
-            <footer class="pt-20 text-gray-600 text-[10px] font-bold uppercase tracking-[0.5em]">
-                © 2026 Designed for impact • Zakarya El Kachach
+            <footer class="pt-10 text-center opacity-20 text-[10px] uppercase font-bold tracking-widest">
+                © 2026 Zakarya El Kachach
             </footer>
-
         </main>
     </div>
 
