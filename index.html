@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zakarya | Digital Strategist</title>
+    <title>Zakarya El Kachach | Digital Strategist</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --bg: #050505;
-            --card-bg: #0f0f0f;
+            --bg: #030712;
             --primary: #6366f1;
-            --border: rgba(255, 255, 255, 0.08);
+            --secondary: #a855f7;
         }
 
         body {
@@ -22,186 +21,197 @@
             overflow-x: hidden;
         }
 
-        /* Ambient Background Light */
-        .ambient-light {
+        /* Animated Background Blobs */
+        .blob {
             position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 80vw;
-            height: 80vh;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, transparent 70%);
             z-index: -1;
-            pointer-events: none;
+            filter: blur(80px);
+            opacity: 0.4;
+            border-radius: 50%;
+            animation: move 20s infinite alternate;
+        }
+        .blob-1 { width: 300px; height: 300px; background: var(--primary); top: -5%; left: -5%; }
+        .blob-2 { width: 400px; height: 400px; background: var(--secondary); bottom: -10%; right: -5%; animation-delay: -5s; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1); }
+            to { transform: translate(20px, 40px) scale(1.1); }
         }
 
-        /* Bento Grid Style */
+        /* Ultra Responsive Bento Card */
         .bento-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 2rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
         }
+        @media (min-width: 768px) { .bento-card { padding: 2rem; } }
 
         .bento-card:hover {
-            border-color: rgba(99, 102, 241, 0.4);
-            background: #141414;
-            transform: scale(1.01);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--primary);
+            transform: translateY(-5px);
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
             -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
+            -webkit-text-fill-color: transparent;
         }
 
-        .nav-blur {
-            backdrop-filter: blur(12px);
-            background: rgba(5, 5, 5, 0.8);
-            border-bottom: 1px solid var(--border);
-        }
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
 
-        .stat-badge {
-            background: rgba(99, 102, 241, 0.1);
-            color: var(--primary);
-            padding: 4px 12px;
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
+        /* Custom Mobile Button */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--bg); }
-        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+        .btn-primary:active { transform: scale(0.95); }
     </style>
 </head>
-<body class="p-4 md:p-10">
+<body class="p-4 md:p-8 lg:p-12">
 
-    <div class="ambient-light"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
 
-    <div class="max-w-6xl mx-auto space-y-6">
+    <div class="max-w-6xl mx-auto space-y-4 md:space-y-6">
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bento-card md:col-span-2 flex flex-col md:flex-row items-center gap-8">
-                <div class="relative">
-                    <img src="images/profil.jpg" alt="Zakarya" class="w-32 h-32 md:w-48 md:h-48 rounded-3xl object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" onerror="this.src='https://ui-avatars.com/api/?name=Zakarya+El+Kachach&background=6366f1&color=fff&size=200'">
-                    <div class="absolute -bottom-2 -right-2 bg-green-500 w-6 h-6 rounded-full border-4 border-[#0f0f0f]"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
+            
+            <div class="lg:col-span-8 bento-card flex flex-col md:flex-row items-center gap-6 md:gap-10">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="images/profil.jpg" alt="Zakarya" 
+                         class="relative w-32 h-32 md:w-44 md:h-44 rounded-full object-cover border-2 border-white/10"
+                         onerror="this.src='https://ui-avatars.com/api/?name=Zakarya+El+Kachach&background=6366f1&color=fff&size=200'">
                 </div>
-                <div class="text-center md:text-left">
-                    <span class="stat-badge">Disponible pour stage</span>
-                    <h1 class="text-4xl md:text-6xl font-extrabold mt-4 mb-2 text-gradient tracking-tight">
-                        Marketing Digital <br>& Commercial
+                <div class="text-center md:text-left space-y-3">
+                    <div class="inline-flex items-center gap-2 bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full text-[10px] md:text-xs font-bold text-indigo-400 tracking-widest uppercase">
+                        <span class="relative flex h-2 w-2">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                        </span>
+                        Disponible pour Stage
+                    </div>
+                    <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold text-gradient leading-tight">
+                        Marketing Digital <br class="hidden md:block"> & Commercial
                     </h1>
-                    <p class="text-gray-400 text-lg">Zakarya El Kachach — <span class="text-white">Data Analyst Student</span></p>
+                    <p class="text-gray-400 text-sm md:text-lg font-medium">
+                        Zakarya El Kachach — <span class="text-white">Data Analyst Student</span>
+                    </p>
                 </div>
             </div>
 
-            <div class="bento-card flex flex-col justify-between group">
-                <h3 class="text-xl font-bold mb-6">Let's Connect</h3>
-                <div class="space-y-4">
-                    <a href="mailto:mrzakaryaelkachach@gmail.com" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
-                        <i class="far fa-envelope text-indigo-500"></i> <span class="text-sm truncate">mrzakaryaelkachach@gmail.com</span>
-                    </a>
-                    <a href="tel:+212708235021" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
-                        <i class="fas fa-phone text-indigo-500"></i> <span class="text-sm">+212 708 235 021</span>
-                    </a>
-                    <a href="https://www.kaggle.com/code/zakaryaaelkachach/analyse-exploratoire-de-mes-premi-res-donn-es" target="_blank" class="flex items-center gap-3 text-gray-400 hover:text-white transition-colors">
-                        <i class="fab fa-kaggle text-indigo-500"></i> <span class="text-sm">Kaggle Portfolio</span>
-                    </a>
+            <div class="lg:col-span-4 bento-card flex flex-col justify-center items-center text-center space-y-6">
+                <div class="w-16 h-16 bg-white/5 rounded-2xl flex items-center justify-center text-2xl text-indigo-400">
+                    <i class="fas fa-file-invoice"></i>
                 </div>
-                <a href="CV_zakarya_el_kachach_.pdf" download class="mt-8 w-full bg-white text-black py-4 rounded-2xl font-bold text-center hover:bg-indigo-500 hover:text-white transition-all">
-                    Download CV <i class="fas fa-arrow-down ml-2"></i>
+                <div>
+                    <h3 class="font-bold text-xl">Curriculum Vitae</h3>
+                    <p class="text-gray-500 text-sm mt-1">Prêt pour l'impression (PDF)</p>
+                </div>
+                <a href="CV_zakarya_el_kachach_.pdf" download 
+                   class="btn-primary w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2 shadow-lg shadow-indigo-500/20">
+                    TÉLÉCHARGER <i class="fas fa-download"></i>
                 </a>
             </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             
-            <div class="md:col-span-8 space-y-6">
-                <div class="bento-card">
-                    <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                        <i class="fas fa-bolt text-yellow-400"></i> Profil Professionnel
-                    </h2>
-                    <p class="text-gray-400 text-lg leading-relaxed">
-                        Étudiant en 2ème année de <span class="text-white font-semibold">Marketing Digital et Commercial</span> à l'EST de Salé. Motivé et dynamique, j'allie création de contenu et analyse pour transformer des insights en campagnes percutantes. Je suis à la recherche d'un stage pour mettre mon expertise au service de votre agence.
-                    </p>
+            <div class="lg:col-span-2 bento-card space-y-4">
+                <h2 class="text-xl font-bold flex items-center gap-2">
+                    <i class="fas fa-user-circle text-indigo-500"></i> À propos
+                </h2>
+                <p class="text-gray-400 leading-relaxed text-sm md:text-base">
+                    Étudiant en 2ème année de <span class="text-white font-semibold">Marketing Digital et Commercial</span> à l'EST de Salé. 
+                    Passionné par l'intersection entre la créativité visuelle et la rigueur des données. 
+                    Mon objectif est d'aider les entreprises à optimiser leur présence digitale à travers des campagnes basées sur l'analyse.
+                </p>
+                <div class="grid grid-cols-2 gap-4 pt-4">
+                    <div class="p-4 bg-white/5 rounded-2xl">
+                        <span class="block text-2xl font-bold text-indigo-400">02</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Ans d'études</span>
+                    </div>
+                    <div class="p-4 bg-white/5 rounded-2xl">
+                        <span class="block text-2xl font-bold text-purple-400">01</span>
+                        <span class="text-[10px] text-gray-500 uppercase font-bold tracking-widest">Stage réalisé</span>
+                    </div>
                 </div>
+            </div>
 
-                <div class="bento-card">
-                    <h2 class="text-2xl font-bold mb-8">Parcours</h2>
-                    <div class="space-y-8">
-                        <div class="flex gap-6">
-                            <div class="text-indigo-500 font-bold text-sm pt-1 w-24">2024-2026</div>
-                            <div>
-                                <h4 class="text-xl font-bold">DUT Marketing Digital</h4>
-                                <p class="text-gray-500">EST Salé - Université Mohammed V</p>
-                            </div>
+            <div class="bento-card">
+                <h2 class="text-xl font-bold mb-6">Expertise</h2>
+                <div class="flex flex-wrap gap-2">
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-colors cursor-default">Marketing Digital</span>
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-colors cursor-default">Canva Expert</span>
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-colors cursor-default">Data Analysis</span>
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-colors cursor-default">Microsoft Office</span>
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-xl text-xs font-semibold hover:bg-indigo-500/20 hover:border-indigo-500/50 transition-colors cursor-default">Social Media</span>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 bento-card">
+                <h2 class="text-xl font-bold mb-8">Parcours Expérience</h2>
+                <div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
+                    
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-[#030712] text-indigo-500 z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+                            <i class="fas fa-graduation-cap text-xs"></i>
                         </div>
-                        <div class="flex gap-6 border-t border-white/5 pt-8">
-                            <div class="text-indigo-500 font-bold text-sm pt-1 w-24">2024-2025</div>
-                            <div>
-                                <h4 class="text-xl font-bold">Stage Initiation</h4>
-                                <p class="text-gray-500 italic">ATACADAO - Gestion Administrative & RH</p>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/5">
+                            <div class="flex items-center justify-between space-x-2 mb-1">
+                                <div class="font-bold text-sm md:text-base">DUT Marketing Digital</div>
+                                <time class="text-[10px] font-bold text-indigo-500 uppercase">2024 — 2026</time>
                             </div>
+                            <div class="text-xs text-gray-500">EST Salé - Université Mohammed V</div>
                         </div>
-                        <div class="flex gap-6 border-t border-white/5 pt-8">
-                            <div class="text-indigo-500 font-bold text-sm pt-1 w-24">2023-2024</div>
-                            <div>
-                                <h4 class="text-xl font-bold">Baccalauréat</h4>
-                                <p class="text-gray-500">Sciences Économiques - Mention Bien</p>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-[#030712] text-purple-500 z-10 shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                            <i class="fas fa-briefcase text-xs"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-4 rounded-2xl bg-white/5 border border-white/5">
+                            <div class="flex items-center justify-between space-x-2 mb-1">
+                                <div class="font-bold text-sm md:text-base">Stage Administratif</div>
+                                <time class="text-[10px] font-bold text-purple-500 uppercase">2024 — 2025</time>
                             </div>
+                            <div class="text-xs text-gray-500 italic text-purple-200/50">ATACADAO (Initiation RH)</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="md:col-span-4 space-y-6">
-                <div class="bento-card">
-                    <h2 class="text-xl font-bold mb-6">Expertise</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-indigo-500/10 border border-indigo-500/20 px-3 py-1 rounded-full text-xs text-indigo-400 font-bold">MARKETING DIGITAL</span>
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">CANVA EXPERT</span>
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">DATA ANALYSIS</span>
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">COMMERCIAL</span>
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">OFFICE 365</span>
-                        <span class="bg-white/5 border border-white/10 px-3 py-1 rounded-full text-xs text-gray-300">CONTENT CREATION</span>
-                    </div>
+            <div class="bento-card flex flex-col justify-between space-y-6">
+                <div class="space-y-4">
+                    <a href="mailto:mrzakaryaelkachach@gmail.com" class="flex items-center gap-4 p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all group">
+                        <i class="far fa-envelope text-indigo-500 text-xl"></i>
+                        <span class="text-[10px] md:text-xs font-medium truncate">mrzakaryaelkachach@gmail.com</span>
+                    </a>
+                    <a href="https://www.kaggle.com/zakaryaaelkachach" target="_blank" class="flex items-center gap-4 p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all">
+                        <i class="fab fa-kaggle text-indigo-400 text-xl"></i>
+                        <span class="text-xs font-medium">Kaggle Portfolio</span>
+                    </a>
+                    <a href="tel:+212708235021" class="flex items-center gap-4 p-3 bg-white/5 rounded-2xl hover:bg-white/10 transition-all">
+                        <i class="fas fa-phone-alt text-green-500 text-xl"></i>
+                        <span class="text-xs font-medium">+212 708 235 021</span>
+                    </a>
                 </div>
-
-                <div class="bento-card">
-                    <h2 class="text-xl font-bold mb-6">Langues</h2>
-                    <div class="space-y-4">
-                        <div>
-                            <div class="flex justify-between text-xs mb-1 uppercase tracking-tighter text-gray-400">Arabe <span>Maternelle</span></div>
-                            <div class="h-1 bg-white/5 rounded-full"><div class="h-full bg-white w-full rounded-full"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1 uppercase tracking-tighter text-gray-400">Français <span>Bon Niveau</span></div>
-                            <div class="h-1 bg-white/5 rounded-full"><div class="h-full bg-indigo-500 w-[85%] rounded-full"></div></div>
-                        </div>
-                        <div>
-                            <div class="flex justify-between text-xs mb-1 uppercase tracking-tighter text-gray-400">Anglais <span>Bon Niveau</span></div>
-                            <div class="h-1 bg-white/5 rounded-full"><div class="h-full bg-indigo-500 w-[80%] rounded-full"></div></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bento-card bg-indigo-600 text-white">
-                    <i class="fas fa-map-marker-alt text-2xl mb-4"></i>
-                    <h4 class="font-bold">Localisation</h4>
-                    <p class="text-sm opacity-80">Basé à Salé (Av. Al Qods). Prêt pour de nouveaux défis à Rabat & Salé.</p>
+                <div class="p-4 bg-indigo-600 rounded-2xl text-center">
+                    <i class="fas fa-map-marker-alt mb-2 block"></i>
+                    <p class="text-[10px] font-bold uppercase tracking-widest">Salé, Maroc</p>
                 </div>
             </div>
         </div>
 
-        <footer class="py-10 text-center opacity-30 text-xs tracking-widest uppercase">
-            &copy; 2026 Crafted by Zakarya El Kachach • Built for Excellence
+        <footer class="pt-10 pb-6 text-center">
+            <p class="text-[10px] text-gray-600 uppercase tracking-[0.3em]">
+                &copy; 2026 Zakarya El Kachach • Design Futuiste & Responsive
+            </p>
         </footer>
     </div>
 
